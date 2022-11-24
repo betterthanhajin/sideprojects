@@ -1,0 +1,94 @@
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('./font/NotoSans-Regular.ttf')format('woff');;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body,html,h2 {
+    
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'NotoSans';
+}
+
+ul,li{ list-style: none;}
+
+a {color:black; text-decoration: none;}
+table{border-collapse: collapse; font-size: 15px;}
+th {background-color: rgb(162, 201, 255);}
+th,td {border:1px solid lightgray; min-width:20px; padding:8px;}
+
+.title {
+    width:100%;
+    margin:0 auto;
+    background-color:rgb(162, 201, 255);
+    height:50px;
+    text-align: center;
+}
+
+.title h2 {
+    padding-top: 10px;
+}
+
+.projectLists {
+margin: 0 auto;
+width:1200px;
+border:1px solid black;
+}
+
+td > input[type="checkbox"] {
+    margin-left: 35%;
+}
+
+input[type="text"] , input[type="date"] {
+    border:1px solid lightgray;
+    color:lightslategrey;
+}
+input[type="text"] {
+    width:98%;
+    height:25px;
+}
+input[type="date"] {
+    height: 25px;
+    padding: 2px;
+    border-radius: 4px;
+    width:40%;
+}
+
+a {
+    display:block;
+    text-align: center;
+}
+button {
+    border:none;
+    background-color: rgb(121, 173, 241);
+    color:rgb(255, 255, 255);
+    padding:8px;
+    border-radius: 4px;
+    font-size: 8px;
+}
+
+.btnWrap {
+    width: 1200px;
+    margin: 1% auto;
+    display:flex;
+    justify-content: right;
+}
+
+input[type="checkbox"] {
+    display: inline-block;
+}
+
+.save {
+    margin-left: 2%;
+    padding: 10px;
+    font-size: 12px;
+}
