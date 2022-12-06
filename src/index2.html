@@ -65,7 +65,7 @@ overflow: hidden;
 #box {
     position: absolute;
     top:88px;
-    width:300px;
+    width:100px;
     height:174px;
     border-left:1px solid lightgray;
     border-right: 1px solid lightgray;
@@ -107,6 +107,7 @@ overflow: hidden;
 let moon = document.getElementById('moon');
 let moon1 = document.getElementById('moon1');
 let moon2 = document.getElementById('moon2');
+let box =  document.querySelector('#box');
 let cnt = 5;
 let cnt2 = 5;
 let str = "px";
@@ -114,16 +115,30 @@ let ten = 10;
 let ten2 = -10;
 // document.addEventListener("keydown", keyHandler, false);
 // document.addEventListener("keyup", keyHandler, false);
+window.addEventListener("click", function(event){
+    console.log("**event browser point", event.pageX, event.pageY);
+    console.log("**event client point", event.clientX, event.clientY);
+})
 document.addEventListener("keydown", function(e){
-console.log("**event", e);
+
     if (e.keyCode === 39 || e.key ==='ArrowRight') {
-        moon.style.position = "absolute";
-        console.log("cnt", cnt);
-        ten = (ten + cnt);
-        moon.style.right = (ten + str);
-        console.log("ArrowRight",  moon.style.right, ten);
-        //moon1.style.left += '10px';
-        cnt++;
+        let boxRect = box.getBoundingClientRect();
+        let moonRect = moon.getBoundingClientRect();
+        console.log("boxRect", boxRect);
+        console.log("moonRect", moonRect);
+        if(moonRect.left > 158){
+            console.log("succ");
+            return;
+        }else{
+            moon.style.position = "absolute";
+            console.log("cnt", cnt);
+            ten = (ten + cnt);
+            moon.style.left = (ten + str);
+            console.log("ArrowRight", moon.style.left, ten);
+            //moon1.style.left += '10px';
+            cnt++;
+        }
+
     } else if(e.keyCode === 37 || e.key === 'ArrowLeft'){
         moon.style.position = "absolute";
         ten2 = (ten2 - cnt2);
