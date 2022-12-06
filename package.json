@@ -1,0 +1,26 @@
+{
+  "name": "sideproject",
+  "version": "1.0.0",
+  "description": "about tiny side projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "cc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betterthanhajin/sideprojects.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/betterthanhajin/sideprojects/issues"
+  },
+  "homepage": "https://github.com/betterthanhajin/sideprojects#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "session-file-store": "^1.5.0"
+  }
+}

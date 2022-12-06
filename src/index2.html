@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="room">
+        <div class="wrapper">
+            <div id="window">
+            </div>
+            <div id="box">
+                <div id="moon">
+        
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <div id="window">
+            </div>
+            <div id="box">
+                <div id="moon1">
+        
+                </div>
+            </div>
+        </div>
+        
+        <div class="wrapper">
+            <div id="window">
+            </div>
+            <div id="box">
+                <div id="moon2">
+        
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+<style>
+#room {
+width: 100%;
+display: flex;
+margin-left: 100px;
+}
+.wrapper {
+position: relative;
+width:1000px;
+height:140px;
+margin-right: 20px;
+overflow: hidden;
+}
+#window {
+    width:100px;
+    height:150px;
+    border-radius: 50%;
+    border-top:1px solid lightgray;
+}
+
+#box {
+    position: absolute;
+    top:88px;
+    width:100px;
+    height:174px;
+    border-left:1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray; 
+}
+
+#moon {
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+
+#moon1 {
+    /* position: inherit; */
+    /* margin-left: -47px; */
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+
+
+#moon2 {
+    /* position: inherit; */
+    /* margin-left: -47px; */
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+
+
+
+</style>
+<script>
+let moon = document.getElementById('moon');
+let moon1 = document.getElementById('moon1');
+let moon2 = document.getElementById('moon2');
+let box =  document.querySelector('#box');
+let cnt = 5;
+let cnt2 = 5;
+let str = "px";
+let ten = 10;
+let ten2 = -10;
+// document.addEventListener("keydown", keyHandler, false);
+// document.addEventListener("keyup", keyHandler, false);
+window.addEventListener("click", function(event){
+    console.log("**event browser point", event.pageX, event.pageY);
+    console.log("**event client point", event.clientX, event.clientY);
+})
+document.addEventListener("keydown", function(e){
+
+    if (e.keyCode === 39 || e.key ==='ArrowRight') {
+        let boxRect = box.getBoundingClientRect();
+        let moonRect = moon.getBoundingClientRect();
+        console.log("boxRect", boxRect);
+        console.log("moonRect", moonRect);
+        if(moonRect.left > 55){
+            console.log("succ");
+            return;
+        }else{
+            moon.style.position = "absolute";
+            console.log("cnt", cnt);
+            ten = (ten + cnt);
+            moon.style.left = (ten + str);
+            console.log("ArrowRight", moon.style.left, ten);
+            //moon1.style.left += '10px';
+            cnt++;
+        }
+
+    } else if(e.keyCode === 37 || e.key === 'ArrowLeft'){
+        moon.style.position = "absolute";
+        ten2 = (ten2 - cnt2);
+        moon.style.left = (ten2 + str);
+        console.log("ArrowLeft", moon.style.left, ten2);
+        cnt2++;
+    }
+});
+</script>
